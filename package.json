@@ -1,0 +1,71 @@
+{
+  "name": "defi-agent-aerodrome",
+  "version": "1.0.0",
+  "description": "DeFi Agent for Aerodrome WETH-VIRTUAL LP Automation on Base Chain",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "cli": "ts-node scripts/cli.ts",
+    "deposit": "ts-node scripts/deposit.ts",
+    "withdraw": "ts-node scripts/withdraw.ts",
+    "status": "ts-node scripts/status.ts",
+    "quick-start": "ts-node scripts/quick-start.ts",
+    "verify-setup": "ts-node scripts/verify-setup.ts",
+    "test": "jest",
+    "test:deploy": "ts-node scripts/deploy-test.ts",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "defi",
+    "aerodrome",
+    "base-chain",
+    "liquidity-provision",
+    "typescript",
+    "web3"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.6.3",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.7.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.ts",
+      "**/?(*.)+(spec|test).ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
