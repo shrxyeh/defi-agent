@@ -67,16 +67,8 @@ cp .env.example .env
 PRIVATE_KEY=your_private_key_here
 
 # Optional: Custom Base RPC URL
-BASE_RPC_URL=https://mainnet.base.org
+BASE_RPC_URL=https://mainnet.
 
-# Optional: Specific gauge address (auto-discovered if not provided)
-GAUGE_ADDRESS=
-
-# Optional: Gas and slippage configuration
-GAS_LIMIT_MULTIPLIER=1.2
-MAX_GAS_PRICE_GWEI=50
-DEFAULT_SLIPPAGE_TOLERANCE=0.5
-MAX_SLIPPAGE_TOLERANCE=5.0
 ```
 
 ### Contract Addresses
@@ -270,53 +262,9 @@ The agent implements comprehensive error handling:
    - Ensure WETH-VIRTUAL pool exists on Aerodrome
    - Verify token addresses are correct
 
-### Debug Mode
-
-Enable detailed logging in your environment:
-```env
-LOG_LEVEL=debug
-ENABLE_DEBUG_LOGGING=true
-```
 
 ## Example Transaction Flows
 
-### Successful Deposit Flow
-```
-Transaction 1: 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
-Operation: USDC to WETH Swap
-Gas Used: 150,000
-
-Transaction 2: 0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
-Operation: USDC to VIRTUAL Swap
-Gas Used: 145,000
-
-Transaction 3: 0x7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456
-Operation: Add Liquidity
-Gas Used: 300,000
-
-Transaction 4: 0x4567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123
-Operation: Stake LP Tokens
-Gas Used: 120,000
-```
-
-### Successful Withdrawal Flow
-```
-Transaction 1: 0x9876543210fedcba9876543210fedcba9876543210fedcba9876543210fedcba
-Operation: Unstake LP Tokens
-Gas Used: 110,000
-
-Transaction 2: 0xba9876543210fedcba9876543210fedcba9876543210fedcba9876543210fedc
-Operation: Remove Liquidity
-Gas Used: 280,000
-
-Transaction 3: 0xdcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210fe
-Operation: WETH to USDC Swap
-Gas Used: 155,000
-
-Transaction 4: 0xfedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210
-Operation: VIRTUAL to USDC Swap
-Gas Used: 148,000
-```
 
 ## Contributing
 
